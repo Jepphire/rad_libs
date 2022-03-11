@@ -1,0 +1,18 @@
+<h2>List of all Radlibs!</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @radlibs.each do |madlib| %>
+        <tr>
+            <td><%= madlib.title %></td>
+            <td>actions</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
