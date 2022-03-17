@@ -1,0 +1,24 @@
+<% if @radlib.errors.any? %>
+    <h3>The following errors prevented your Radlib from being submitted:</h3>
+    <ul>
+        <% @radlib.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_with(model: @radlib, local: true) do |f| %>
+
+<p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+</p>
+<p>
+    <%= f.label :content %><br/>
+    <%= f.text_area :content %>
+</p>
+<p>
+    <%= f.submit %>
+</p>
+
+<% end %>

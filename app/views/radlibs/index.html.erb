@@ -4,15 +4,22 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Actions</th>
+            <th colspan="3">Actions</th>
         </tr>
     </thead>
     <tbody>
-        <% @radlibs.each do |madlib| %>
+        <% @radlibs.each do |radlib| %>
         <tr>
-            <td><%= madlib.title %></td>
-            <td>actions</td>
+            <td><%= radlib.title %></td>
+            <td><%= link_to 'Show', radlib_path(radlib) %></td>
+            <td><%= link_to 'Edit', edit_radlib_path(radlib) %></td>
+            <td><%= button_to 'Delete', radlib_path(radlib), method: :delete, data: { confirm: "Are you sure?"} %></td>
         </tr>
         <% end %>
     </tbody>
 </table>
+
+<p>
+    <%= link_to 'New Radlib', new_radlib_path %> |
+    <%= link_to 'Home', root_path %>
+</p>

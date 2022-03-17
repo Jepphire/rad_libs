@@ -1,3 +1,7 @@
 <h3><%= @radlib.title %></h3>
 
 <p><%= @radlib.content %></p>
+
+<%= link_to 'Edit', edit_radlib_path(@radlib) %> |
+<%= button_to 'Delete', radlib_path(@radlib), method: :delete, data: { confirm: "Are you sure?"} %> |
+<%= link_to 'Radlibs Index', radlibs_path %>
