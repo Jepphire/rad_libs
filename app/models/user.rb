@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+    has_many :radlibs
     validates :username, 
         presence: true, 
         uniqueness: { case_sensitive: false }, 
@@ -9,4 +11,5 @@ class User < ApplicationRecord
         uniqueness: { case_sensitive: false }, 
         length: { maximum: 105 }, 
         format: { with: VALID_EMAIL }
+        
 end
